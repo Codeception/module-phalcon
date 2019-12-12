@@ -17,7 +17,7 @@ install:
   - '[[ -z "$CI_USER_TOKEN" ]] || composer config github-oauth.github.com ${CI_USER_TOKEN};'
   - travis_retry composer self-update && composer --version
   - travis_retry composer update --prefer-dist --no-interaction
-  - git clone -q --depth=1 https://github.com/Codeception/phalcon-demo.git framework-tests
+  - git clone -q --depth=1 https://github.com/Codeception/phalcon-demo.git -b v1.0.1 framework-tests
   - git --git-dir framework-tests/.git log -n 1
   - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b v3.4.5
   - (cd cphalcon/build; bash ./install --phpize $(phpenv which phpize) --php-config $(phpenv which php-config) &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null)
