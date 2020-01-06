@@ -454,11 +454,12 @@ class Phalcon extends Framework implements ActiveRecord, PartedModule
      * Recommended to use for unit testing.
      *
      * @param string $service    Service name
-     * @param array  $parameters Parameters [Optional]
+     * @param array|null  $parameters Parameters [Optional]. Set it to null
+     * if you want service container to use parameters defined in the config of the container
      * @return mixed
      * @part services
      */
-    public function grabServiceFromContainer($service, array $parameters = [])
+    public function grabServiceFromContainer($service, array $parameters = null)
     {
         if (!$this->di->has($service)) {
             $this->fail("Service $service is not available in container");
