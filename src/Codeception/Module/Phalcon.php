@@ -459,7 +459,7 @@ class Phalcon extends Framework implements ActiveRecord, PartedModule
      * @return mixed
      * @part services
      */
-    public function grabServiceFromContainer($service, ?array $parameters = [])
+    public function grabServiceFromContainer($service, array $parameters = null)
     {
         if (!$this->di->has($service)) {
             $this->fail("Service $service is not available in container");
