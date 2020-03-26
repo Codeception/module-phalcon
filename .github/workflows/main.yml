@@ -39,5 +39,7 @@ jobs:
 
     - name: Run test suite
       run: |
+        mysql -e "CREATE DATABASE phalcon_demo CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
+        cat framework-tests/schemas/phalcon_demo.sql | mysql phalcon_demo
         php ./vendor/bin/codecept build -c framework-tests
         php ./vendor/bin/codecept run functional -c framework-tests
