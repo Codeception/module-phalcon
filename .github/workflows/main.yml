@@ -28,7 +28,7 @@ jobs:
         git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b v3.4.5 cphalcon
         cd cphalcon/build
         ls
-        ./install --phpize $(phpenv which phpize) --php-config $(phpenv which php-config) &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null
+        ./install &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null
         ls
         pwd
         (cd cphalcon/build; bash ./install --phpize $(phpenv which phpize) --php-config $(phpenv which php-config) &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null)
