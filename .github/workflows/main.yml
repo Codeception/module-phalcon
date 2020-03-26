@@ -25,13 +25,6 @@ jobs:
       run: |
         git clone -q --depth=1 https://github.com/Codeception/phalcon-demo.git -b v1.0.2 framework-tests
         git --git-dir framework-tests/.git log -n 1
-        git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b v3.4.5 cphalcon
-        cd cphalcon/build
-        ls
-        ./install &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null
-        ls
-        pwd
-        (cd cphalcon/build; bash ./install --phpize $(phpenv which phpize) --php-config $(phpenv which php-config) &>/dev/null && phpenv config-add ../tests/_ci/phalcon.ini &> /dev/null)
         composer update -d framework-tests --no-dev --prefer-dist --no-interaction
 
     - name: Validate composer.json and composer.lock
