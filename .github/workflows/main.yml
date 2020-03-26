@@ -19,15 +19,8 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         tools: pecl
-        extensions: mbstring, php-xml, ext-dom
+        extensions: mbstring, php-xml, ext-dom, phalcon4
         coverage: none
-
-    - name: Install Phalcon
-      run: |
-        mkdir pecl_tmp
-        pecl channel-update pecl.php.net
-        pear config-set temp_dir ./pecl_tmp
-        pecl install phalcon
 
     - name: Install Phalcon Demo
       run: |
