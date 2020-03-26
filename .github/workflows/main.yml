@@ -24,6 +24,8 @@ jobs:
 
     - name: Install Phalcon
       run: |
+        mkdir pecl_tmp
+        pear config-set temp_dir ./pecl_tmp
         pecl channel-update pecl.php.net
         pecl install phalcon
 
