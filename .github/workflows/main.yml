@@ -23,9 +23,8 @@ jobs:
 
     - name: Install Phalcon
       run: |
-        curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
-        sudo apt-get update
-        sudo apt-get install php-phalcon
+        pecl channel-update pecl.php.net
+        pecl install phalcon
 
     - name: Install Phalcon Demo
       run: |
