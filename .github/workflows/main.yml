@@ -8,7 +8,17 @@ jobs:
 
     services:
       mysql:
-        image: mysql
+        image: mysql:5.7
+        env:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: phalcon_demo
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     strategy:
       matrix:
@@ -39,7 +49,6 @@ jobs:
 
     - name: Run test suite
       run: |
-        mysql -e "CREATE DATABASE phalcon_demo CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
         cat framework-tests/schemas/phalcon_demo.sql | mysql phalcon_demo
         php ./vendor/bin/codecept build -c framework-tests
         php ./vendor/bin/codecept run functional -c framework-tests
