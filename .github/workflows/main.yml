@@ -40,10 +40,8 @@ jobs:
         git clone -b v1.0.2 https://github.com/Codeception/phalcon-demo.git framework-tests
         git --git-dir framework-tests/.git log -n 1
         composer update -d framework-tests --no-dev --prefer-dist --no-interaction
-        cat framework-tests/app/config/config.ini
         sed -i -e "s/localhost/127.0.0.1/g" framework-tests/app/config/config.ini
         sed -i -e "s/password =/password = password/g" framework-tests/app/config/config.ini
-        cat framework-tests/app/config/config.ini
 
     - name: Validate composer.json and composer.lock
       run: composer validate
