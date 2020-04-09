@@ -49,6 +49,6 @@ jobs:
 
     - name: Run test suite
       run: |
-        cat framework-tests/schemas/phalcon_demo.sql | mysql phalcon_demo
+        cat framework-tests/schemas/phalcon_demo.sql | mysql phalcon_demo -uroot -proot -h 127.0.0.1
         php ./vendor/bin/codecept build -c framework-tests
         php ./vendor/bin/codecept run functional -c framework-tests
