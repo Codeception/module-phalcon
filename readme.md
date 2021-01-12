@@ -1,13 +1,24 @@
-# Codeception module for Phalcon framework
+# Codeception Module Phalcon
 
-![Build Status](https://github.com/Codeception/module-phalcon/workflows/CI/badge.svg)
+A Codeception module for Phalcon framework
+
+[![Actions Status](https://github.com/Codeception/module-phalcon/workflows/CI/badge.svg)](https://github.com/Codeception/module-phalcon/actions)
+[![Latest Stable Version](https://poser.pugx.org/codeception/module-phalcon/v/stable)](https://github.com/Codeception/module-phalcon/releases)
+[![Total Downloads](https://poser.pugx.org/codeception/module-phalcon/downloads)](https://packagist.org/packages/codeception/module-phalcon)
+[![License](https://poser.pugx.org/codeception/module-phalcon/license)](/LICENSE)
 
 ## Installation
 
 ```
-composer require --dev "codeception/module-phalcon"
+composer require "codeception/module-phalcon" --dev
 ```
 
 ## Documentation
 
-<a href="https://codeception.com/docs/modules/Phalcon">Module documentation</a>
+See [the module documentation](https://codeception.com/docs/modules/Phalcon).
+
+## License
+
+`Codeception Module Phalcon` is open-sourced software licensed under the [MIT](/LICENSE) License.
+
+© Codeception PHP Testing Framework
