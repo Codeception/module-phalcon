@@ -142,7 +142,7 @@ class Phalcon extends Client
                         $cookie->getExpiration(),
                         $cookie->getPath(),
                         $cookie->getDomain(),
-                        $cookie->getSecure() ? $cookie->getSecure() : false,
+                        (bool) $cookie->getSecure(),
                         $cookie->getHttpOnly()
                     );
                     $headers['Set-Cookie'][] = (string)$clientCookie;
