@@ -17,6 +17,8 @@ composer require "codeception/module-phalcon" --dev
 
 See [the module documentation](https://codeception.com/docs/modules/Phalcon).
 
+[Changelog](https://github.com/Codeception/module-phalcon/releases)
+
 ## License
 
 `Codeception Module Phalcon` is open-sourced software licensed under the [MIT](/LICENSE) License.
