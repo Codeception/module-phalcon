@@ -2,7 +2,7 @@
     "name":"codeception/module-phalcon",
     "description":"Codeception module for Phalcon framework",
     "keywords":["codeception", "phalcon"],
-    "homepage":"http://codeception.com/",
+    "homepage":"https://codeception.com/",
     "type":"library",
     "license":"MIT",
     "authors":[
